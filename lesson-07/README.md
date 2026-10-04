@@ -12,6 +12,7 @@ In this lesson, I learned:
 * Using `if` inside a `while` loop
 * Finding even and odd numbers
 * Creating multiplication tables
+* Getting beginner-friendly user input
 * Difference between `for` and `while` loops
 * How to avoid infinite loops
 
@@ -209,6 +210,129 @@ Output:
 
 ---
 
+## 8. Beginner-Friendly User Input
+
+In Node.js, we can use the built-in `readline` module to get input from the user.
+
+### Example
+
+```javascript
+const readline = require("readline");
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+rl.question("Enter a number: ", (answer) => {
+    const number = Number(answer);
+
+    console.log(`You entered: ${number}`);
+
+    rl.close();
+});
+```
+
+Run:
+
+```bash
+node script.js
+```
+
+Example:
+
+```text
+Enter a number: 25
+You entered: 25
+```
+
+### Important
+
+`rl.question()` gives us the user's input as a **String**.
+
+That's why we use:
+
+```javascript
+const number = Number(answer);
+```
+
+This converts the input from String to Number.
+
+For example:
+
+```text
+"25" → 25
+```
+
+---
+
+## 9. User Input + `while` Loop
+
+Now let's combine input with a `while` loop.
+
+The user will enter a number, and the program will print from `1` up to that number.
+
+```javascript
+const readline = require("readline");
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+rl.question("Enter a number: ", (answer) => {
+    const limit = Number(answer);
+
+    let i = 1;
+
+    while (i <= limit) {
+        console.log(i);
+        i++;
+    }
+
+    rl.close();
+});
+```
+
+Example:
+
+```text
+Enter a number: 5
+
+1
+2
+3
+4
+5
+```
+
+### What happens here?
+
+```text
+User enters 5
+      ↓
+"5" is converted to 5
+      ↓
+i = 1
+      ↓
+while i <= 5
+      ↓
+Print 1, 2, 3, 4, 5
+      ↓
+Stop
+```
+
+This is a very good beginner example because it combines:
+
+* User input
+* `Number()`
+* Variable
+* `while` loop
+* Condition
+* `i++`
+
+---
+
 ## ⚠️ Important: Infinite Loop
 
 Always remember to update the loop variable.
@@ -326,6 +450,48 @@ while (i <= 10) {
 }
 ```
 
+### Practice 6 ⭐⭐
+
+Ask the user for a number and print from `1` to that number.
+
+Example:
+
+```text
+Enter a number: 7
+
+1
+2
+3
+4
+5
+6
+7
+```
+
+Hint:
+
+```javascript
+const readline = require("readline");
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+rl.question("Enter a number: ", (answer) => {
+    const limit = Number(answer);
+
+    let i = 1;
+
+    while (i <= limit) {
+        console.log(i);
+        i++;
+    }
+
+    rl.close();
+});
+```
+
 ---
 
 ## ▶️ How to Run
@@ -340,6 +506,12 @@ Run the JavaScript file:
 
 ```bash
 node script.js
+```
+
+For the input example, type a number when the terminal asks:
+
+```text
+Enter a number:
 ```
 
 ---
@@ -361,6 +533,8 @@ lesson-07/
 * `i++` increases a value by 1.
 * `i--` decreases a value by 1.
 * `%` can be used to find even and odd numbers.
+* `readline` can be used to get user input in Node.js.
+* `Number()` converts a numeric String into a Number.
 * Always update the loop variable to avoid an infinite loop.
 * `for` and `while` can often solve the same problems.
 
