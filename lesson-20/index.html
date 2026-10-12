@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Developer Task Manager</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <h1>Developer Task Manager</h1>
+
+        <p class="subtitle">
+            Organize your coding and learning tasks.
+        </p>
+
+        <form id="taskForm">
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="Enter a task..."
+                autocomplete="off"
+            >
+
+            <button type="submit">Add Task</button>
+        </form>
+
+        <p id="message" role="status"></p>
+
+        <section class="stats">
+            <div class="stat-card">
+                <span>Total Tasks</span>
+                <strong id="totalTasks">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>Completed</span>
+                <strong id="completedTasks">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>Remaining</span>
+                <strong id="remainingTasks">0</strong>
+            </div>
+        </section>
+
+        <h2>My Tasks</h2>
+
+        <ul id="taskList"></ul>
+
+        <button id="clearCompleted" type="button" class="secondary">
+            Clear Completed Tasks
+        </button>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
