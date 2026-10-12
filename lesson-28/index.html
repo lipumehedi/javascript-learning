@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Directory | Day 28</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="container">
+        <header>
+            <p class="eyebrow">JAVASCRIPT PROJECT </p>
+            <h1>Developer Directory</h1>
+            <p class="subtitle">
+                Explore sample users loaded from a public API.
+            </p>
+        </header>
+
+        <section class="controls">
+            <label for="searchInput">Search developers</label>
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search by name, email, or city..."
+            >
+
+            <button id="loadButton" type="button">
+                Reload Users
+            </button>
+        </section>
+
+        <p id="status" role="status" aria-live="polite">
+            Click Reload Users to load data.
+        </p>
+
+        <section id="userList" class="user-list"></section>
+    </main>
+</body>
+</html>
