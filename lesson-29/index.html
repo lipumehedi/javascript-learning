@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lesson 29 - Error Handling</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main class="container">
+        <header>
+            <p class="eyebrow">JAVASCRIPT PHASE 2 · DAY 29</p>
+            <h1>Error Handling Playground</h1>
+            <p>Practice handling errors safely in JavaScript.</p>
+        </header>
+
+        <section class="card">
+            <h2>1. Division Calculator</h2>
+            <p>Enter two numbers to divide.</p>
+
+            <form id="calculatorForm">
+                <label for="firstNumber">First number</label>
+                <input
+                    type="number"
+                    id="firstNumber"
+                    step="any"
+                    required
+                >
+
+                <label for="secondNumber">Second number</label>
+                <input
+                    type="number"
+                    id="secondNumber"
+                    step="any"
+                    required
+                >
+
+                <button type="submit">Calculate</button>
+            </form>
+
+            <p id="calculatorMessage" class="message" role="status"></p>
+        </section>
+
+        <section class="card">
+            <h2>2. JSON Error Handling</h2>
+            <p>Try parsing valid and invalid JSON.</p>
+
+            <button id="validJsonButton" type="button">
+                Parse Valid JSON
+            </button>
+
+            <button id="invalidJsonButton" type="button" class="secondary">
+                Parse Invalid JSON
+            </button>
+
+            <p id="jsonMessage" class="message" role="status"></p>
+        </section>
+
+        <section class="card">
+            <h2>3. API Error Handling</h2>
+            <p>Fetch sample user data from a public API.</p>
+
+            <button id="apiButton" type="button">
+                Load User
+            </button>
+
+            <p id="apiMessage" class="message" role="status"></p>
+        </section>
+
+        <section class="card">
+            <h2>4. Console Practice</h2>
+            <p>
+                Open the browser console with F12 to see the
+                try/catch and finally examples.
+            </p>
+        </section>
+    </main>
+
+</body>
+</html>
