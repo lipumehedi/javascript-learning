@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Developer Job Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="container">
+        <header class="page-header">
+            <div>
+                <p class="eyebrow">JAVASCRIPT CAPSTONE </p>
+                <h1>Developer Job Tracker</h1>
+                <p class="subtitle">
+                    Track your job applications in one place.
+                </p>
+            </div>
+
+            <button id="demoButton" type="button" class="secondary">
+                Load Demo Data
+            </button>
+        </header>
+
+        <section class="stats">
+            <article class="stat-card">
+                <span>Total Applications</span>
+                <strong id="totalCount">0</strong>
+            </article>
+
+            <article class="stat-card">
+                <span>Applied</span>
+                <strong id="appliedCount">0</strong>
+            </article>
+
+            <article class="stat-card">
+                <span>Interviews</span>
+                <strong id="interviewCount">0</strong>
+            </article>
+
+            <article class="stat-card">
+                <span>Offers</span>
+                <strong id="offerCount">0</strong>
+            </article>
+        </section>
+
+        <section class="panel">
+            <h2>Add Job Application</h2>
+
+            <form id="jobForm">
+                <div class="form-grid">
+                    <div>
+                        <label for="jobTitle">Job Title</label>
+                        <input
+                            id="jobTitle"
+                            type="text"
+                            placeholder="Python Backend Developer"
+                            required
+                            maxlength="100"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="company">Company</label>
+                        <input
+                            id="company"
+                            type="text"
+                            placeholder="Company name"
+                            required
+                            maxlength="100"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="location">Location</label>
+                        <input
+                            id="location"
+                            type="text"
+                            placeholder="Tokyo / Yokohama"
+                            required
+                            maxlength="100"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="salary">Annual Salary (JPY)</label>
+                        <input
+                            id="salary"
+                            type="number"
+                            min="0"
+                            step="10000"
+                            placeholder="5000000"
+                            required
+                        >
+                    </div>
+
+                    <div>
+                        <label for="status">Application Status</label>
+                        <select id="status">
+                            <option value="Applied">Applied</option>
+                            <option value="Interview">Interview</option>
+                            <option value="Offer">Offer</option>
+                            <option value="Rejected">Rejected</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit">Add Application</button>
+            </form>
+
+            <p id="formMessage" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="panel">
+            <h2>My Applications</h2>
+
+            <div class="filters">
+                <div>
+                    <label for="searchInput">Search</label>
+                    <input
+                        id="searchInput"
+                        type="search"
+                        placeholder="Search job or company..."
+                    >
+                </div>
+
+                <div>
+                    <label for="filterStatus">Filter by Status</label>
+                    <select id="filterStatus">
+                        <option value="All">All Statuses</option>
+                        <option value="Applied">Applied</option>
+                        <option value="Interview">Interview</option>
+                        <option value="Offer">Offer</option>
+                        <option value="Rejected">Rejected</option>
+                    </select>
+                </div>
+            </div>
+
+            <p id="listMessage" role="status" aria-live="polite"></p>
+            <section id="jobList" class="job-list"></section>
+        </section>
+
+        <footer>
+            <p> JavaScript Capstone Project by Lipu</p>
+        </footer>
+    </main>
+</body>
+</html>
